@@ -1,70 +1,81 @@
 //
-//  ViewController2.swift
+//  ViewController3.swift
 //  FirstProject
 //
-//  Created by jerry on 2022/8/7.
+//  Created by jerry on 2022/8/8.
 //
 
 import UIKit
 
-class ViewController2: UIViewController,DataPorocol {
- 
-   override func viewDidLoad() {
+protocol DataPorocol{
+    func dataProto(data: String)
+}
+
+class ViewController3: UIViewController {
+    var closure: ((String) -> Void)?
+    var data: String?
+    var sData: String?
+    var delegate: DataPorocol?
+    init(data: String) {
+        
+        self.sData = data
+        print("sData: \(sData)")
+        super.init(nibName: nil, bundle: nil)
+    }
+   
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    override func viewDidLoad() {
+        
         super.viewDidLoad()
-        print("viewDidLoad")
+       
+        print("ViewController3: viewDidLoad")
+        print(data!)
+        self.view.backgroundColor = UIColor.purple
         
         let btn = UIButton(frame: CGRect(x: (self.view.frame.width / 2 - 30), y: (self.view.frame.height / 2 - 30), width: 60, height: 40))
+        
         btn.addTarget(self, action: #selector(onBtnClick(btn:)), for: UIControl.Event.touchUpInside)
         btn.setTitle("跳转", for: UIControl.State.normal)
         btn.backgroundColor = UIColor.blue
-        self.view.backgroundColor = UIColor.red
+        self.view.backgroundColor = UIColor.orange
         self.view.addSubview(btn)
-       
-       
+
+        // Do any additional setup after loading the view.
     }
-    
     @objc
     func onBtnClick(btn: UIButton){
-        print("onClick")
-        let vc3 = ViewController3(data: "第二种参数传递方式")
-        vc3.data = "传递参数"
-        vc3.delegate = self
-        vc3.closure = {(data: String) -> Void in
-            
-            print(data)
-         }
-        self.present(vc3, animated: true, completion: nil)
-    
-    }
-    
-    func dataProto(data: String) {
-        print("data: \(data)")
+        self.closure!("回调参数")
+        self.delegate?.dataProto(data: "第二种回调方式,协议")
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillLayoutSubviews() {
-        print("viewWillLayoutSubviews")
+        print("viewWillLayoutSubviews3")
     }
     
     override func viewDidLayoutSubviews() {
-        print("viewDidLayoutSubviews")
+        print("viewDidLayoutSubviews3")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
+        print("viewWillAppear3")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
+        print("viewDidAppear3")
     }
     override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear")
+        print("viewWillDisappear3")
     }
     override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear")
+        print("viewDidDisappear3")
     }
     override func didReceiveMemoryWarning() {
-        print("didReceiveMemoryWarning")
+        print("didReceiveMemoryWarning3")
     }
+    
 
     /*
     // MARK: - Navigation

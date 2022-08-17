@@ -85,6 +85,16 @@
 		A0DB1DE528AC9290004EE6D0 /* ObjectC_Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DB1DE428AC9290004EE6D0 /* ObjectC_Handler.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A0DB1E0F28ACC83C004EE6D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0DB1E0B28ACC83B004EE6D0 /* CoreDataLearn.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0DB1DF128ACC830004EE6D0;
+			remoteInfo = CoreDataLearn;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A04C540D28A34BFB00D1C935 /* ScrollViewDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewDemoController.swift; sourceTree = "<group>"; };
 		A04C541228A34EB900D1C935 /* TableViewDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDemoController.swift; sourceTree = "<group>"; };
@@ -166,6 +176,7 @@
 		A0DB1DDA28AC90AB004EE6D0 /* bridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridgeHeader.h; sourceTree = "<group>"; };
 		A0DB1DE328AC9290004EE6D0 /* ObjectC_Handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectC_Handler.h; sourceTree = "<group>"; };
 		A0DB1DE428AC9290004EE6D0 /* ObjectC_Handler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectC_Handler.m; sourceTree = "<group>"; };
+		A0DB1E0B28ACC83B004EE6D0 /* CoreDataLearn.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreDataLearn.xcodeproj; path = ../../CoreDataLearn/CoreDataLearn.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +273,7 @@
 		A088217A28A1F8D7002FAECD /* FirstProject */ = {
 			isa = PBXGroup;
 			children = (
+				A0DB1E0B28ACC83B004EE6D0 /* CoreDataLearn.xcodeproj */,
 				A0DB1DDA28AC90AB004EE6D0 /* bridgeHeader.h */,
 				A0DB1DE328AC9290004EE6D0 /* ObjectC_Handler.h */,
 				A0DB1DE428AC9290004EE6D0 /* ObjectC_Handler.m */,
@@ -362,6 +374,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A0DB1E0C28ACC83B004EE6D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0DB1E1028ACC83C004EE6D0 /* CoreDataLearn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -407,12 +427,28 @@
 			mainGroup = A088216F28A1F8D7002FAECD;
 			productRefGroup = A088217928A1F8D7002FAECD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A0DB1E0C28ACC83B004EE6D0 /* Products */;
+					ProjectRef = A0DB1E0B28ACC83B004EE6D0 /* CoreDataLearn.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A088217728A1F8D7002FAECD /* FirstProject */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A0DB1E1028ACC83C004EE6D0 /* CoreDataLearn.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CoreDataLearn.app;
+			remoteRef = A0DB1E0F28ACC83C004EE6D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A088217628A1F8D7002FAECD /* Resources */ = {

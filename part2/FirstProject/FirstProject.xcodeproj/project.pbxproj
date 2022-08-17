@@ -18,7 +18,6 @@
 		A04C542C28A4D5D000D1C935 /* UICllectionViewDemo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C542B28A4D5D000D1C935 /* UICllectionViewDemo2ViewController.swift */; };
 		A04C542F28A4DD0600D1C935 /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C542E28A4DD0600D1C935 /* WaterFallLayout.swift */; };
 		A04C543328A4F85A00D1C935 /* AnimationDemo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C543228A4F85A00D1C935 /* AnimationDemo1ViewController.swift */; };
-		A04C543728A508EB00D1C935 /* lufei.gif in Resources */ = {isa = PBXBuildFile; fileRef = A04C543628A508EB00D1C935 /* lufei.gif */; };
 		A04C543A28A50A7400D1C935 /* GifAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C543928A50A7400D1C935 /* GifAnimationViewController.swift */; };
 		A04C543E28A5F81500D1C935 /* LayerDemo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C543D28A5F81500D1C935 /* LayerDemo1ViewController.swift */; };
 		A04C544128A60BBC00D1C935 /* AnimationDemo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04C544028A60BBC00D1C935 /* AnimationDemo2ViewController.swift */; };
@@ -83,6 +82,7 @@
 		A0DB1DD428AB875E004EE6D0 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DB1DD328AB875E004EE6D0 /* People.swift */; };
 		A0DB1DD828AC905F004EE6D0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DB1DD728AC905F004EE6D0 /* libsqlite3.0.tbd */; };
 		A0DB1DE528AC9290004EE6D0 /* ObjectC_Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DB1DE428AC9290004EE6D0 /* ObjectC_Handler.m */; };
+		A0DB1E2628ACDFF9004EE6D0 /* lufei.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0DB1E2528ACDFF9004EE6D0 /* lufei.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +107,6 @@
 		A04C542B28A4D5D000D1C935 /* UICllectionViewDemo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICllectionViewDemo2ViewController.swift; sourceTree = "<group>"; };
 		A04C542E28A4DD0600D1C935 /* WaterFallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
 		A04C543228A4F85A00D1C935 /* AnimationDemo1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemo1ViewController.swift; sourceTree = "<group>"; };
-		A04C543628A508EB00D1C935 /* lufei.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lufei.gif; path = "../../../../Desktop/swift5代码/第二部分/27_GIFAnimation/27_GIFAnimation/lufei.gif"; sourceTree = "<group>"; };
 		A04C543928A50A7400D1C935 /* GifAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifAnimationViewController.swift; sourceTree = "<group>"; };
 		A04C543D28A5F81500D1C935 /* LayerDemo1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerDemo1ViewController.swift; sourceTree = "<group>"; };
 		A04C544028A60BBC00D1C935 /* AnimationDemo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemo2ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +176,7 @@
 		A0DB1DE328AC9290004EE6D0 /* ObjectC_Handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectC_Handler.h; sourceTree = "<group>"; };
 		A0DB1DE428AC9290004EE6D0 /* ObjectC_Handler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectC_Handler.m; sourceTree = "<group>"; };
 		A0DB1E0B28ACC83B004EE6D0 /* CoreDataLearn.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreDataLearn.xcodeproj; path = ../../CoreDataLearn/CoreDataLearn.xcodeproj; sourceTree = "<group>"; };
+		A0DB1E2528ACDFF9004EE6D0 /* lufei.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lufei.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +273,7 @@
 		A088217A28A1F8D7002FAECD /* FirstProject */ = {
 			isa = PBXGroup;
 			children = (
+				A0DB1E2528ACDFF9004EE6D0 /* lufei.gif */,
 				A0DB1E0B28ACC83B004EE6D0 /* CoreDataLearn.xcodeproj */,
 				A0DB1DDA28AC90AB004EE6D0 /* bridgeHeader.h */,
 				A0DB1DE328AC9290004EE6D0 /* ObjectC_Handler.h */,
@@ -280,7 +281,6 @@
 				A0DB1DCF28AB76E9004EE6D0 /* NewPList.plist */,
 				A0DB1DCA28AB52D2004EE6D0 /* Internet */,
 				A04C544628A9E47C00D1C935 /* AutoLayout */,
-				A04C543628A508EB00D1C935 /* lufei.gif */,
 				A04C543128A4F83800D1C935 /* Animation */,
 				A04C542628A4B62D00D1C935 /* UICollectionView */,
 				A04C541128A34E9300D1C935 /* UITableView */,
@@ -458,8 +458,8 @@
 				A088218828A1F8E2002FAECD /* LaunchScreen.storyboard in Resources */,
 				A04C541928A38F4E00D1C935 /* ProductTableViewCell.xib in Resources */,
 				A0DB1DD028AB76E9004EE6D0 /* NewPList.plist in Resources */,
-				A04C543728A508EB00D1C935 /* lufei.gif in Resources */,
 				A088218528A1F8E2002FAECD /* Assets.xcassets in Resources */,
+				A0DB1E2628ACDFF9004EE6D0 /* lufei.gif in Resources */,
 				A088218328A1F8D7002FAECD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

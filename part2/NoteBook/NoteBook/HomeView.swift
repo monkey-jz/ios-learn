@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol HomeViewDelegate {
+    func onGroupClick(name: String)
+}
+
 class HomeView: UIScrollView {
    
     let interItemSpacing = 15
     let lineSpacing = 25
     var dataArray: Array<String>?
     var btnItemArray: Array<UIButton> = Array()
+    var homeViewDelegate: HomeViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +26,7 @@ class HomeView: UIScrollView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+   
     func updateLayout() {
         let itemWidth = (self.frame.size.width - CGFloat(interItemSpacing) * 4) / 3
         let itemHeight = itemWidth * 4 / 3
@@ -52,7 +57,9 @@ class HomeView: UIScrollView {
     
     @objc
     func onItemClick(item: UIButton) {
-        print(item.currentTitle)
+        if homeViewDelegate != nil {
+            homeViewDelegate?.onGroupClick(name: item.currentTitle! as String)
+        }
     }
 
 }

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController ,HomeViewDelegate{
+ 
     var dataArray: Array<String>?
     var homeView: HomeView!
     
@@ -16,14 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title = "点滴生活"
         self.edgesForExtendedLayout = UIRectEdge()
-        self.dataArray = DataManager.getGropData()
         self.setAddBtn()
         self.setHomeView()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.dataArray = DataManager.getGropData()
+        updateHomeViewData()
+    }
+    
     func setHomeView(){
         self.homeView = HomeView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 60))
+        homeView.homeViewDelegate = self
         self.view.addSubview(self.homeView)
         updateHomeViewData()
     }
@@ -71,7 +76,13 @@ class ViewController: UIViewController {
         })
     }
     
-
+    func onGroupClick(name: String) {
+        let noteListTableViewController = NoteListTableViewController()
+        noteListTableViewController.groupName = name
+        self.navigationController?.pushViewController(noteListTableViewController, animated: true)
+        
+    }
+ 
 
 }
 

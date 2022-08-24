@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9D5ADBFFE6088D03409D23EF /* Pods_NoteBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF9354A1348934FE6F223C4 /* Pods_NoteBook.framework */; };
 		A007AA3428B383D60019C7B6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007AA3328B383D60019C7B6 /* DataManager.swift */; };
+		A007AA3728B46CD30019C7B6 /* NoteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007AA3628B46CD30019C7B6 /* NoteListTableViewController.swift */; };
+		A007AA3A28B46D060019C7B6 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007AA3928B46D060019C7B6 /* NoteModel.swift */; };
+		A007AA4628B4C7D30019C7B6 /* NoteDetilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007AA4528B4C7D30019C7B6 /* NoteDetilViewController.swift */; };
 		A0DB46C028B31E7900FAA20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DB46BF28B31E7900FAA20C /* AppDelegate.swift */; };
 		A0DB46C228B31E7900FAA20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DB46C128B31E7900FAA20C /* SceneDelegate.swift */; };
 		A0DB46C428B31E7900FAA20C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DB46C328B31E7900FAA20C /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 		7EF9354A1348934FE6F223C4 /* Pods_NoteBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971B969753FC6204ED331DB0 /* Pods-NoteBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook/Pods-NoteBook.debug.xcconfig"; sourceTree = "<group>"; };
 		A007AA3328B383D60019C7B6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A007AA3628B46CD30019C7B6 /* NoteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewController.swift; sourceTree = "<group>"; };
+		A007AA3928B46D060019C7B6 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		A007AA4528B4C7D30019C7B6 /* NoteDetilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetilViewController.swift; sourceTree = "<group>"; };
 		A0DB46BC28B31E7900FAA20C /* NoteBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DB46BF28B31E7900FAA20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0DB46C128B31E7900FAA20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				A0DB46CA28B31E8500FAA20C /* LaunchScreen.storyboard */,
 				A0DB46CD28B31E8500FAA20C /* Info.plist */,
 				A007AA3328B383D60019C7B6 /* DataManager.swift */,
+				A007AA4528B4C7D30019C7B6 /* NoteDetilViewController.swift */,
+				A007AA3628B46CD30019C7B6 /* NoteListTableViewController.swift */,
+				A007AA3928B46D060019C7B6 /* NoteModel.swift */,
 			);
 			path = NoteBook;
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 				A0DB46C428B31E7900FAA20C /* ViewController.swift in Sources */,
 				A007AA3428B383D60019C7B6 /* DataManager.swift in Sources */,
 				A0DB46E628B3219D00FAA20C /* HomeView.swift in Sources */,
+				A007AA3A28B46D060019C7B6 /* NoteModel.swift in Sources */,
+				A007AA3728B46CD30019C7B6 /* NoteListTableViewController.swift in Sources */,
 				A0DB46C028B31E7900FAA20C /* AppDelegate.swift in Sources */,
 				A0DB46C228B31E7900FAA20C /* SceneDelegate.swift in Sources */,
+				A007AA4628B4C7D30019C7B6 /* NoteDetilViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

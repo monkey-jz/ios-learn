@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChineseChess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="xQq-qn-TRa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhF-Nv-BPk">
+                                <rect key="frame" x="160" y="390" width="94" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="开始游戏">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oqv-KF-nL2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59E-1i-kxW">
+                                <rect key="frame" x="116.5" y="274" width="181" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="中国象棋">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jd-EB-VVi">
+                                <rect key="frame" x="169" y="445" width="76" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="音效:关">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="musicState:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcO-aL-2TW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5jd-EB-VVi" firstAttribute="top" secondItem="vhF-Nv-BPk" secondAttribute="bottom" constant="15" id="9Jv-ZT-9kH"/>
+                            <constraint firstItem="xQq-qn-TRa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AQ7-cb-HY3"/>
+                            <constraint firstAttribute="bottom" secondItem="xQq-qn-TRa" secondAttribute="bottom" id="JD9-NI-a6c"/>
+                            <constraint firstItem="vhF-Nv-BPk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JJD-aQ-nyy"/>
+                            <constraint firstItem="59E-1i-kxW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jdx-AQ-5GH"/>
+                            <constraint firstItem="5jd-EB-VVi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Njn-Iq-3kl"/>
+                            <constraint firstItem="vhF-Nv-BPk" firstAttribute="top" secondItem="59E-1i-kxW" secondAttribute="bottom" constant="50" id="OOR-JA-RHm"/>
+                            <constraint firstItem="xQq-qn-TRa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OR7-56-gJP"/>
+                            <constraint firstItem="59E-1i-kxW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="230" id="XXL-Zw-cD3"/>
+                            <constraint firstItem="vhF-Nv-BPk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cr4-yF-BbN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xQq-qn-TRa" secondAttribute="trailing" id="dRV-FS-ThJ"/>
+                            <constraint firstItem="vhF-Nv-BPk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2b-e8-niT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="musicStateBtn" destination="5jd-EB-VVi" id="UNV-tW-Ev0"/>
+                        <outlet property="startGameBtn" destination="vhF-Nv-BPk" id="L7L-aA-cUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.05797101449275" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bgImage" width="320" height="480"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

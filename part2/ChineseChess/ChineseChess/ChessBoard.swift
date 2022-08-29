@@ -8,9 +8,15 @@
 import UIKit
 import CoreGraphics
 
+enum ROLE {
+    case BLUE
+    case RED
+}
+
 protocol ChessBoardProtocol {
     func onChessItemClick(chessItem: ChessItem)
     func onChessMoveEnd()
+    func gameOver(winer: ROLE)
 }
 
 class ChessBoard: UIView {
@@ -99,6 +105,8 @@ class ChessBoard: UIView {
     }
     
     func restartGame() {
+        cancelAllSelect()
+        
         for item in currentRedChessItemArray {
             item.removeFromSuperview()
         }
@@ -269,6 +277,16 @@ class ChessBoard: UIView {
                 currentBlueChessItemArray.remove(at: currentBlueChessItemArray.firstIndex(of: item)!)
             }else {
                 currentRedChessItemArray.remove(at: currentRedChessItemArray.firstIndex(of: item)!)
+            }
+            if item.title(for: .normal) == "将" {
+                if delegate != nil {
+                    delegate?.gameOver(winer: .RED)
+                }
+            }
+            if item.title(for: .normal) == "帥" {
+                if delegate != nil {
+                    delegate?.gameOver(winer: .BLUE)
+                }
             }
         }
         tipButtonArray.forEach{(tipButton) in

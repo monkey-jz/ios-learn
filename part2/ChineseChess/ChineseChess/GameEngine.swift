@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol GameEngineDelegate {
+    func onChessItemClick(chessItem: ChessItem)
+    func gameOver(winer: ROLE)
+}
+
 class GameEngine: NSObject,ChessBoardProtocol {
-    
+   
     var chessBoard: ChessBoard?
+    var delegate: GameEngineDelegate?
     var isRedFirstMove = true
     var isRedMove = true
     
@@ -29,6 +35,9 @@ class GameEngine: NSObject,ChessBoardProtocol {
     }
     
     func onChessItemClick(chessItem: ChessItem) {
+        if delegate != nil {
+            delegate?.onChessItemClick(chessItem: chessItem)
+        }
         if isRedMove {
             if chessItem.isRed! {
                 chessBoard?.cancelAllSelect()
@@ -426,6 +435,7 @@ class GameEngine: NSObject,ChessBoardProtocol {
                 }) || blueList!.contains(where: {(position) in
                     return position == (tempPoint.0 + 1,tempPoint.1)
                 }){
+                    canMovePositions.append((tempPoint.0 + 1,tempPoint.1))
                     break
                 }else{
                     canMovePositions.append((tempPoint.0 + 1,tempPoint.1))
@@ -463,7 +473,152 @@ class GameEngine: NSObject,ChessBoardProtocol {
                 }
                 tempPoint = (tempPoint.0,tempPoint.1 + 1)
             }
-            print(canMovePositions)
+           
+        }
+        if chessName == "炮" {
+            let redList = chessBoard?.getAllRedChessMatrixList()
+            let blueList = chessBoard?.getAllBlueChessMatrixList()
+            
+            var tempPoint:(Int,Int) = point!
+            //横向
+            //左
+            var leftCanMovePositions :[(Int,Int)] = Array<(Int,Int)>()
+            while tempPoint.0 - 1 >= 0 {
+                if redList!.contains(where: {(position) in
+                    return position == (tempPoint.0 - 1,tempPoint.1)
+                }) || blueList!.contains(where: {(position) in
+                    return position == (tempPoint.0 - 1,tempPoint.1)
+                }){
+                    break
+                }else{
+                    leftCanMovePositions.append((tempPoint.0 - 1,tempPoint.1))
+                }
+                tempPoint = (tempPoint.0 - 1,tempPoint.1)
+            }
+            var bridgePoint: (Int,Int)!
+            if !leftCanMovePositions.isEmpty {
+                bridgePoint = (leftCanMovePositions.last!.0 - 1,leftCanMovePositions.last!.1)
+            }else {
+                bridgePoint = (point!.0 - 1,point!.1)
+            }
+            if bridgePoint.0 >= 1 && bridgePoint.1 == point!.1{
+               while bridgePoint.0 - 1 >= 0 {
+                    if blueList!.contains(where: {(position) in
+                        return position == (bridgePoint.0 - 1,bridgePoint.1)
+                    }) || redList!.contains(where: {(position) in
+                        return position == (bridgePoint.0 - 1,bridgePoint.1)
+                    }) {
+                        leftCanMovePositions.append((bridgePoint.0 - 1,bridgePoint.1))
+                        break
+                    }
+                    bridgePoint = (bridgePoint.0 - 1,bridgePoint.1)
+                }
+           }
+            //右
+            tempPoint = point!
+            var rightCanMovePositions :[(Int,Int)] = Array<(Int,Int)>()
+            while tempPoint.0 + 1 <= 8 {
+                if redList!.contains(where: {(position) in
+                    return position == (tempPoint.0 + 1,tempPoint.1)
+                }) || blueList!.contains(where: {(position) in
+                    return position == (tempPoint.0 + 1,tempPoint.1)
+                }){
+                    break
+                }else{
+                    rightCanMovePositions.append((tempPoint.0 + 1,tempPoint.1))
+                }
+                tempPoint = (tempPoint.0 + 1,tempPoint.1)
+            }
+            if !rightCanMovePositions.isEmpty {
+               bridgePoint = (rightCanMovePositions.last!.0 + 1,rightCanMovePositions.last!.1)
+            }else {
+               bridgePoint = (point!.0 + 1,point!.1)
+            }
+            if bridgePoint.0 <= 7 && bridgePoint.1 == point!.1{
+                while bridgePoint.0 + 1 <= 8 {
+                    if blueList!.contains(where: {(position) in
+                        return position == (bridgePoint.0 + 1,bridgePoint.1)
+                    }) || redList!.contains(where: {(position) in
+                        return position == (bridgePoint.0 + 1,bridgePoint.1)
+                    }){
+                        rightCanMovePositions.append((bridgePoint.0 + 1,bridgePoint.1))
+                        break
+                    }
+                bridgePoint = (bridgePoint.0 + 1,bridgePoint.1)
+                }
+            }
+            //竖向
+            //上
+            tempPoint = point!
+            var upCanMovePositions :[(Int,Int)] = Array<(Int,Int)>()
+            while tempPoint.1 - 1 >= 0 {
+                if redList!.contains(where: {(position) in
+                    return position == (tempPoint.0,tempPoint.1 - 1)
+                }) || blueList!.contains(where: {(position) in
+                    return position == (tempPoint.0,tempPoint.1 - 1)
+                }){
+                    break
+                }else{
+                    upCanMovePositions.append((tempPoint.0,tempPoint.1 - 1))
+                }
+                tempPoint = (tempPoint.0,tempPoint.1 - 1)
+            }
+            if !upCanMovePositions.isEmpty {
+                bridgePoint = (upCanMovePositions.last!.0,upCanMovePositions.last!.1 - 1)
+            }else {
+                bridgePoint = (point!.0,point!.1 - 1)
+            }
+            if bridgePoint.1 >= 1 && bridgePoint.0 == point!.0{
+               while bridgePoint.1 - 1 >= 0 {
+                    if blueList!.contains(where: {(position) in
+                        return position == (bridgePoint.0,bridgePoint.1 - 1)
+                    }) || redList!.contains(where: {(position) in
+                        return position == (bridgePoint.0 + 1,bridgePoint.1)
+                    }){
+                        upCanMovePositions.append((bridgePoint.0,bridgePoint.1 - 1))
+                        break
+                    }
+                    bridgePoint = (bridgePoint.0,bridgePoint.1 - 1)
+                }
+            }
+            
+            //下
+            tempPoint = point!
+            var downCanMovePositions :[(Int,Int)] = Array<(Int,Int)>()
+            while tempPoint.1 + 1 <= 9 {
+                if redList!.contains(where: {(position) in
+                    return position == (tempPoint.0,tempPoint.1 + 1)
+                }) || blueList!.contains(where: {(position) in
+                    return position == (tempPoint.0,tempPoint.1 + 1)
+                }) {
+                    break
+                }else{
+                    downCanMovePositions.append((tempPoint.0,tempPoint.1 + 1))
+                }
+                tempPoint = (tempPoint.0,tempPoint.1 + 1)
+            }
+            if !downCanMovePositions.isEmpty {
+                bridgePoint = (downCanMovePositions.last!.0,downCanMovePositions.last!.1 + 1)
+            }else {
+                bridgePoint = (point!.0,point!.1 + 1)
+            }
+            if bridgePoint.1 <= 8 && bridgePoint.0 == point!.0{
+               while bridgePoint.1 + 1 <= 9 {
+                    if blueList!.contains(where: {(position) in
+                        return position == (bridgePoint.0,bridgePoint.1 + 1)
+                    }) || redList!.contains(where: {(position) in
+                        return position == (tempPoint.0,tempPoint.1 + 1)
+                    }){
+                        downCanMovePositions.append((bridgePoint.0,bridgePoint.1 + 1))
+                        break
+                    }
+                    bridgePoint = (bridgePoint.0,bridgePoint.1 + 1)
+                }
+           }
+            canMovePositions.append(contentsOf: leftCanMovePositions)
+            canMovePositions.append(contentsOf: rightCanMovePositions)
+            canMovePositions.append(contentsOf: upCanMovePositions)
+            canMovePositions.append(contentsOf: downCanMovePositions)
         }
         chessBoard?.showChessItemCanMovePosition(canMovePositions: canMovePositions, chessItem: chessItem)
     }
@@ -471,6 +626,12 @@ class GameEngine: NSObject,ChessBoardProtocol {
     func onChessMoveEnd() {
         isRedMove = !isRedMove
         chessBoard?.cancelAllSelect()
+    }
+    
+    func gameOver(winer: ROLE) {
+        if delegate != nil {
+            delegate?.gameOver(winer: winer)
+        }
     }
     
 

@@ -144,9 +144,6 @@ class InternetDemoViewController: UIViewController {
         } catch  {
             print(error)
         }
-
-        
     }
- 
 
 }

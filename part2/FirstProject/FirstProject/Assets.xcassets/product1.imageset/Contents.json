@@ -3,6 +3,17 @@
     {
       "filename" : "5njp9b6Xv9.png",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 46,
+          "right" : 50
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 471
+        },
+        "mode" : "3-part-horizontal"
+      },
       "scale" : "1x"
     },
     {
